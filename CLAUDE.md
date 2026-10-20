@@ -20,7 +20,7 @@ Links: **Conceito | Produtos | Sobre nós** (fora da home, âncoras viram `index
 
 ## Sections
 
-`index.html`: hero, `#conceito`, `#produtos`, `#contato`. `sobre.html`: hero, No que acreditamos, Nossas marcas, Dados da empresa, `#contato`. Páginas de marca: hero (categoria, marca, subtítulo, foto, CTA "Quero revender" com `mailto:` e assunto `<Marca> - Revenda`), Como usar/Como tomar, Outras marcas Dakoland, `#contato`. Nav, contato e rodapé são iguais em todas as páginas: mudou em uma, replique nas outras. Seções alternam fundo `#FBF6EC` e `#F3EBDA`; contato em `#0F4C3A`.
+`index.html`: hero, `#produtos` (carrossel), `#contato`. `sobre.html`: hero, `#conceito` (Um D que brota), No que acreditamos, Nossas marcas, Dados da empresa, `#contato`. Páginas de marca: hero (categoria, marca, subtítulo, foto, CTA "Quero revender" com `mailto:` e assunto `<Marca> - Revenda`), Como usar/Como tomar, Outras marcas Dakoland, `#contato`. Nav, contato e rodapé são iguais em todas as páginas: mudou em uma, replique nas outras. Seções alternam fundo `#FBF6EC` e `#F3EBDA`; contato em `#0F4C3A`.
 
 ## Footer
 
@@ -41,7 +41,7 @@ Símbolo + wordmark e ícones de redes à esquerda; endereço, telefone/WhatsApp
 | Molho para tacos | The Sauce | |
 | Suco de milho | Amahoo! | Exclamação faz parte do nome. Amahoo! é a linha de milho da Dakoland; por enquanto só suco, outras linhas no futuro (não anunciar) |
 
-Card de produto: categoria como label, marca como título.
+Home: marcas em carrossel (ver `DESIGN.md`); categoria como label, marca como título. Marca nova entra como mais um `.marca-slide` no `#marcas-trilho`.
 
 ## Domínio e SEO
 
@@ -67,7 +67,7 @@ Domínio: https://dakoland.com.br (`CNAME`). Toda página tem `link[canonical]` 
 | `assets/android-chrome-*.png` / `android-maskable-*.png` / `site.webmanifest` | Android e PWA |
 | `assets/mstile-150x150.png` / `browserconfig.xml` / `safari-pinned-tab.svg` | Windows e Safari |
 | `assets/og-image.png` | 1200x630, versão F horizontal |
-| `assets/produto-punhado.jpg` / `produto-the-sauce.jpg` / `produto-amahoo.jpg` | Fotos dos cards de produto, 1024x768 (4:3), JPEG progressivo q80 |
+| `assets/produto-punhado.jpg` | Foto do Punhado no carrossel, 1024x768 |
 | `assets/the-sauce-destaque.jpg` / `amahoo-destaque.jpg` | Foto vertical (832x1040, 4:5) do hero da página da marca |
 
 Fonte dos ícones e logos: `~/obsidian/dakoland/dakoland-foods/marca/` (ver `README.md` de lá). Ao trocar a marca, copie de lá em vez de gerar de novo.
