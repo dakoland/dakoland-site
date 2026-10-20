@@ -63,8 +63,6 @@
     .marca-nome { font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 48px; line-height: 1; color: #FBF6EC; }
     .marca-link { font-size: 14px; font-weight: 600; color: #FBF6EC; opacity: 0.9; }
     .marca-slide:hover .marca-link { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-    .marca-ponto { width: 6px; height: 6px; border-radius: 3px; background: rgba(15,76,58,0.25); transition: width 0.3s, background 0.3s; }
-    .marca-ponto.ativo { width: 28px; background: #0F4C3A; }
     @media (max-width: 768px) {
       :root { --marca-h: 420px; }
       .marca-nome { font-size: 38px; }
@@ -119,7 +117,7 @@
       </div>
     </section>
 
-    <section id="produtos" style="padding-top:104px;padding-bottom:104px;">
+    <section id="produtos" style="padding-top:104px;padding-bottom:0;">
       <div class="container-inner">
         <div class="flex items-end justify-between gap-6 mb-12">
           <div id="marcas-titulo">
@@ -160,9 +158,6 @@
             </span>
           </a>
         </div>
-      </div>
-      <div class="container-inner">
-        <div class="flex gap-2 items-center mt-8" id="marcas-pontos" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -210,7 +205,6 @@
       var trilho = document.getElementById('marcas-trilho');
       var viewport = trilho.parentElement;
       var titulo = document.getElementById('marcas-titulo');
-      var pontos = document.getElementById('marcas-pontos');
       var originais = Array.prototype.slice.call(trilho.children);
       var total = originais.length;
       var root = document.documentElement;
@@ -223,7 +217,6 @@
       Array.prototype.forEach.call(trilho.children, function (slide, i) {
         if (i < total || i >= total * 2) { slide.setAttribute('tabindex', '-1'); slide.setAttribute('aria-hidden', 'true'); }
       });
-      originais.forEach(function () { var p = document.createElement('span'); p.className = 'marca-ponto'; pontos.appendChild(p); });
 
       function medir() {
         var altura = parseFloat(getComputedStyle(root).getPropertyValue('--marca-h'));
@@ -236,7 +229,6 @@
         trilho.classList.toggle('sem-animacao', !animar);
         var esquerda = titulo.getBoundingClientRect().left - viewport.getBoundingClientRect().left;
         trilho.style.transform = 'translateX(' + (esquerda - indice * passo + (desvio || 0)) + 'px)';
-        Array.prototype.forEach.call(pontos.children, function (p, i) { p.classList.toggle('ativo', i === indice % total); });
       }
 
       var semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -286,6 +278,23 @@
       });
       trilho.addEventListener('click', function (e) { if (arrastou) { e.preventDefault(); arrastou = false; } }, true);
       trilho.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+      var automatico = null;
+      function parar() { clearInterval(automatico); automatico = null; }
+      function iniciar() {
+        parar();
+        if (semMovimento.matches || document.hidden) return;
+        automatico = setInterval(function () { ir(1); }, 4500);
+      }
+      viewport.addEventListener('mouseenter', parar);
+      viewport.addEventListener('mouseleave', iniciar);
+      viewport.addEventListener('focusin', parar);
+      viewport.addEventListener('focusout', iniciar);
+      document.getElementById('marcas-proxima').addEventListener('click', iniciar);
+      document.getElementById('marcas-anterior').addEventListener('click', iniciar);
+      window.addEventListener('pointerup', function () { if (!viewport.matches(':hover')) iniciar(); });
+      document.addEventListener('visibilitychange', iniciar);
+      iniciar();
 
       window.addEventListener('resize', function () { medir(); posicionar(false); });
       medir();

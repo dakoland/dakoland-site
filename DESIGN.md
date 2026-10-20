@@ -54,7 +54,7 @@ Container `max-width: 1120px`, padding 32px (16px no mobile). Seções com 104-1
 - Botão secundário: `border border-[#0F4C3A]/30 text-[#0F4C3A] rounded-full`, hover `bg-[#F3EBDA]`
 - Botão sobre floresta: `bg-[#F2A541] text-[#0F4C3A] rounded-full`
 - Painel de marca: `rounded-[28px]`, fundo floresta (símbolo F) ou creme (símbolo A)
-- Carrossel de marcas (home, `#produtos`): faixa de ponta a ponta, painéis colados com corte a 15° (`clip-path`, `--marca-off = altura × tan 15°`), altura 520px (420px no mobile), passo 460px (até 78vw). Foto original do produto, sem filtro, com escurecimento embaixo; categoria em manga, marca em Fraunces creme, link. Setas no cabeçalho, arraste, pontos de posição e loop infinito (clones antes e depois).
+- Carrossel de marcas (home, `#produtos`): faixa de ponta a ponta, painéis colados com corte a 15° (`clip-path`, `--marca-off = altura × tan 15°`), altura 520px (420px no mobile), passo 460px (até 78vw). Foto original do produto, sem filtro, com escurecimento embaixo; categoria em manga, marca em Fraunces creme, link. Avança sozinho a cada 4,5 s (pausa com mouse em cima, foco, aba oculta ou movimento reduzido), setas no cabeçalho, arraste e loop infinito (clones antes e depois). Sem pontos de posição. A faixa encosta na seção de contato (sem espaço embaixo).
 
 ## Tom visual
 
