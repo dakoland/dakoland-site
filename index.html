@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dakoland Foods é uma indústria de alimentos. Marcas: Punhado (granola), The Sauce (molho para tacos) e Amahoo! (suco de milho).">
+  <link rel="canonical" href="https://dakoland.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dakoland.com.br/">
+  <meta property="og:site_name" content="Dakoland Foods">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Dakoland Foods - Indústria de alimentos">
+  <meta property="og:description" content="Dakoland Foods é uma indústria de alimentos. Marcas: Punhado (granola), The Sauce (molho para tacos) e Amahoo! (suco de milho).">
+  <meta property="og:image" content="https://dakoland.com.br/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dakoland Foods - Indústria de alimentos">
+  <meta name="twitter:description" content="Granola, molho para tacos e suco de milho. Um D que brota.">
+  <title>Dakoland Foods - Indústria de alimentos</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#0F4C3A">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="msapplication-config" content="assets/browserconfig.xml">
+  <meta name="theme-color" content="#0F4C3A">
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'], serif: ['Fraunces','Georgia','serif'] } } } }
+  </script>
+  <style>
+    body { background-color: #FBF6EC; color: #2B2620; }
+    html { scroll-behavior: smooth; }
+    .container-inner { max-width: 1120px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
+    .foods { font-weight: 600; letter-spacing: 0.52em; color: #9A5518; }
+    @media (max-width: 768px) {
+      .container-inner { padding-left: 16px; padding-right: 16px; }
+      .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .two-col > * { min-width: 0; }
+      .three-col { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .three-col > * { min-width: 0; }
+      main section { padding-top: 64px !important; padding-bottom: 64px !important; }
+      .hero-cta { flex-direction: column !important; }
+      .hero-cta a { width: 100% !important; text-align: center !important; box-sizing: border-box; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <nav class="sticky top-0 z-50 bg-[#FBF6EC]/95 backdrop-blur border-b border-[#E8DCC4]">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="Dakoland Foods, início">
+        <img src="assets/simbolo.svg" alt="" class="h-9 w-auto" width="124" height="144">
+        <span class="flex flex-col leading-none">
+          <span class="font-serif font-bold text-[22px] text-[#0F4C3A]">Dakoland</span>
+          <span class="foods text-[8px] mt-1 pl-px">FOODS</span>
+        </span>
+      </a>
+      <div class="flex items-center gap-4 md:gap-8">
+        <a href="#conceito" class="hidden md:block text-sm text-[#2B2620] hover:opacity-50 transition-opacity">Conceito</a>
+        <a href="#produtos" class="hidden md:block text-sm text-[#2B2620] hover:opacity-50 transition-opacity">Produtos</a>
+        <a href="sobre.html" class="hidden md:block text-sm text-[#2B2620] hover:opacity-50 transition-opacity">Sobre nós</a>
+        <a href="#contato" class="text-sm bg-[#0F4C3A] text-[#FBF6EC] px-4 py-2 rounded-full hover:bg-[#0A3328] transition-colors font-semibold whitespace-nowrap">Fale com a gente</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section style="padding-top:104px;padding-bottom:112px;">
+      <div class="container-inner">
+        <div class="two-col" style="display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:center;">
+          <div>
+            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase mb-6 text-[#9A5518]">Indústria de alimentos</p>
+            <h1 class="font-serif font-bold text-[48px] md:text-[76px] leading-[1.02] tracking-[-0.01em] text-[#0F4C3A] mb-7">
+              Comida que nasce de um lugar
+            </h1>
+            <p class="text-[17px] md:text-[19px] leading-[1.65] text-[#5A5148] mb-10 max-w-[560px]">
+              A Dakoland Foods produz alimentos com origem, sabor e assinatura. Nossas marcas são a granola Punhado, o molho para tacos The Sauce e o suco de milho Amahoo!
+            </p>
+            <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;">
+              <a href="#produtos" class="inline-block text-[15px] text-[#FBF6EC] bg-[#0F4C3A] hover:bg-[#0A3328] px-7 py-3.5 rounded-full font-semibold transition-colors">Conheça os produtos</a>
+              <a href="#conceito" class="inline-block text-[15px] text-[#0F4C3A] px-7 py-3.5 rounded-full border border-[#0F4C3A]/30 hover:bg-[#F3EBDA] transition-colors font-semibold">Nossa marca</a>
+            </div>
+          </div>
+          <div class="rounded-[28px] bg-[#0F4C3A] aspect-[4/3] md:aspect-[5/6] flex items-center justify-center">
+            <img src="assets/simbolo-escuro.svg" alt="Símbolo Dakoland Foods: a letra D com um broto de duas folhas" class="w-[52%] h-auto" width="124" height="144">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conceito" class="bg-[#F3EBDA]" style="padding-top:104px;padding-bottom:104px;">
+      <div class="container-inner">
+        <div class="two-col" style="display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center;">
+          <div class="rounded-[28px] bg-[#FBF6EC] aspect-square hidden md:flex items-center justify-center">
+            <img src="assets/simbolo.svg" alt="Símbolo Dakoland Foods" class="w-[46%] h-auto" width="124" height="144" loading="lazy">
+          </div>
+          <div>
+            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase mb-5 text-[#9A5518]">Conceito</p>
+            <h2 class="font-serif font-bold text-[36px] md:text-[52px] leading-[1.05] text-[#0F4C3A] mb-6">Um D que brota</h2>
+            <p class="text-[17px] md:text-[18px] leading-[1.7] text-[#2B2620] mb-5">
+              Nosso símbolo é a letra D, de Dakoland, com um broto nascendo de dentro. É a marca de quem assina o que faz e cuida do que cresce.
+            </p>
+            <p class="text-[17px] md:text-[18px] leading-[1.7] text-[#5A5148]">
+              A folha manga traz o sabor e o sol da ilha. A folha verde lembra a origem natural de cada ingrediente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" style="padding-top:104px;padding-bottom:104px;">
+      <div class="container-inner">
+        <div class="max-w-[640px] mb-14">
+          <p class="text-[12px] font-semibold tracking-[0.3em] uppercase mb-5 text-[#9A5518]">Produtos</p>
+          <h2 class="font-serif font-bold text-[36px] md:text-[52px] leading-[1.05] text-[#0F4C3A] mb-5">Nossas marcas</h2>
+          <p class="text-[17px] leading-[1.7] text-[#5A5148]">Do café da manhã ao jantar, cada marca nasce do mesmo cuidado com sabor e origem.</p>
+        </div>
+        <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+          <article class="rounded-[24px] bg-[#F3EBDA] overflow-hidden flex flex-col">
+            <img src="assets/produto-punhado.jpg" alt="Granola Punhado em uma tigela com castanhas, uvas-passas e mel" class="w-full aspect-[4/3] object-cover" width="1024" height="768" loading="lazy">
+            <div class="p-7 flex flex-col gap-3">
+              <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518]">Granola</p>
+              <h3 class="font-serif font-bold text-[28px] text-[#0F4C3A] -mt-1">Punhado</h3>
+              <p class="text-[15px] leading-[1.65] text-[#5A5148]">Granola montada sob pedido. Você escolhe a base e os ingredientes e dá nome à sua receita.</p>
+              <a href="https://punhado.com.br" target="_blank" rel="noopener" class="text-[14px] font-semibold text-[#0F4C3A] hover:opacity-60 transition-opacity">punhado.com.br →</a>
+            </div>
+          </article>
+          <article class="rounded-[24px] bg-[#F3EBDA] overflow-hidden flex flex-col">
+            <img src="assets/produto-the-sauce.jpg" alt="Garrafa do molho para tacos The Sauce entre tacos, pimentas e limão" class="w-full aspect-[4/3] object-cover" width="1024" height="768" loading="lazy">
+            <div class="p-7 flex flex-col gap-3">
+              <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518]">Molho para tacos</p>
+              <h3 class="font-serif font-bold text-[28px] text-[#0F4C3A] -mt-1">The Sauce</h3>
+              <p class="text-[15px] leading-[1.65] text-[#5A5148]">Feito à base de tomate, encorpado e pronto para servir. Taco, nacho, burrito ou o que a noite pedir.</p>
+              <a href="the-sauce.html" class="text-[14px] font-semibold text-[#0F4C3A] hover:opacity-60 transition-opacity">Conhecer The Sauce →</a>
+            </div>
+          </article>
+          <article class="rounded-[24px] bg-[#F3EBDA] overflow-hidden flex flex-col">
+            <img src="assets/produto-amahoo.jpg" alt="Caixa do suco de milho Amahoo! em meio a espigas e grãos de milho" class="w-full aspect-[4/3] object-cover" width="1024" height="768" loading="lazy">
+            <div class="p-7 flex flex-col gap-3">
+              <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518]">Suco de milho</p>
+              <h3 class="font-serif font-bold text-[28px] text-[#0F4C3A] -mt-1">Amahoo!</h3>
+              <p class="text-[15px] leading-[1.65] text-[#5A5148]">O sabor do milho em forma de bebida. Para tomar gelado, a qualquer hora do dia.</p>
+              <a href="amahoo.html" class="text-[14px] font-semibold text-[#0F4C3A] hover:opacity-60 transition-opacity">Conhecer Amahoo! →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="bg-[#0F4C3A]" style="padding-top:112px;padding-bottom:112px;">
+      <div class="container-inner text-center flex flex-col items-center">
+        <img src="assets/simbolo-escuro.svg" alt="" class="h-20 w-auto mb-8" width="124" height="144" loading="lazy">
+        <h2 class="font-serif font-bold text-[36px] md:text-[56px] leading-[1.05] text-[#FBF6EC] mb-5">Vamos conversar</h2>
+        <p class="text-[17px] leading-[1.7] text-[#FBF6EC]/80 max-w-[520px] mb-10">Distribuição, revenda, parcerias ou só uma pergunta sobre os produtos. Escreva para a gente.</p>
+        <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+          <a href="mailto:contato@dakoland.com.br" class="inline-block text-[15px] bg-[#F2A541] hover:bg-[#E89A2E] text-[#0F4C3A] px-8 py-4 rounded-full font-semibold transition-colors">contato@dakoland.com.br</a>
+          <span class="inline-block text-[15px] text-[#FBF6EC] px-8 py-4 rounded-full border border-[#FBF6EC]/30 font-semibold">WhatsApp (44) 99702-2026</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-[#E8DCC4]">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/simbolo.svg" alt="" class="h-8 w-auto" width="124" height="144">
+          <span class="flex flex-col leading-none">
+            <span class="font-serif font-bold text-[20px] text-[#0F4C3A]">Dakoland</span>
+            <span class="foods text-[7px] mt-1 pl-px">FOODS</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="#" aria-label="Instagram da Dakoland Foods" class="w-9 h-9 rounded-full border border-[#E8DCC4] flex items-center justify-center text-[#0F4C3A] hover:bg-[#F3EBDA] transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook da Dakoland Foods" class="w-9 h-9 rounded-full border border-[#E8DCC4] flex items-center justify-center text-[#0F4C3A] hover:bg-[#F3EBDA] transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg></a>
+          <a href="#" aria-label="LinkedIn da Dakoland Foods" class="w-9 h-9 rounded-full border border-[#E8DCC4] flex items-center justify-center text-[#0F4C3A] hover:bg-[#F3EBDA] transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+        </div>
+      </div>
+      <div class="md:text-right">
+        <p class="text-[12px] text-[#5A5148] mb-1">Av. das Indústrias, 2026, Parque Industrial, Maringá / PR, 87065-120</p>
+        <p class="text-[12px] text-[#5A5148] mb-1">Telefone (44) 3027-2026 · WhatsApp (44) 99702-2026 · contato@dakoland.com.br</p>
+        <p class="text-[12px] text-[#5A5148] mb-1">Dakoland Indústria e Comércio de Alimentos Ltda, CNPJ 51.927.202/0001-14</p>
+        <p class="text-[12px] text-[#5A5148]">© 2026 Dakoland Foods</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
