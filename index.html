@@ -51,6 +51,13 @@
       .hero-cta { flex-direction: column !important; }
       .hero-cta a { width: 100% !important; text-align: center !important; box-sizing: border-box; }
     }
+    .hero { position: relative; overflow: hidden; }
+    .hero-texto { position: relative; z-index: 1; }
+    .hero-arte { position: absolute; right: 0; bottom: 0; height: 100%; width: min(620px, calc(100vw - 720px)); }
+    @media (max-width: 768px) {
+      main section.hero { padding-bottom: 0 !important; }
+      .hero-arte { position: static; display: block; width: 78%; height: auto; margin: 40px 0 0 auto; }
+    }
     :root { --marca-h: 520px; --marca-w: 460px; --marca-off: 139px; }
     .marcas-viewport { overflow: hidden; touch-action: pan-y; cursor: grab; }
     .marcas-viewport.arrastando { cursor: grabbing; }
@@ -94,10 +101,9 @@
 
   <main>
 
-    <section style="padding-top:104px;padding-bottom:112px;">
-      <div class="container-inner">
-        <div class="two-col" style="display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:center;">
-          <div>
+    <section class="hero" style="padding-top:132px;padding-bottom:160px;">
+      <div class="container-inner hero-texto">
+          <div class="max-w-[640px]">
             <p class="text-[12px] font-semibold tracking-[0.3em] uppercase mb-6 text-[#9A5518]">Indústria de alimentos</p>
             <h1 class="font-serif font-bold text-[48px] md:text-[76px] leading-[1.02] tracking-[-0.01em] text-[#0F4C3A] mb-7">
               Sabor que brota
@@ -110,11 +116,16 @@
               <a href="sobre.html" class="inline-block text-[15px] text-[#0F4C3A] px-7 py-3.5 rounded-full border border-[#0F4C3A]/30 hover:bg-[#F3EBDA] transition-colors font-semibold">Nossa marca</a>
             </div>
           </div>
-          <div class="rounded-[28px] bg-[#0F4C3A] aspect-[4/3] md:aspect-[5/6] flex items-center justify-center">
-            <img src="assets/simbolo-escuro.svg" alt="Símbolo Dakoland Foods: a letra D com um broto de duas folhas" class="w-[52%] h-auto" width="124" height="144">
-          </div>
-        </div>
       </div>
+      <svg class="hero-arte" viewBox="820 80 620 640" preserveAspectRatio="xMaxYMax meet" aria-hidden="true" focusable="false">
+        <circle cx="1250" cy="150" r="64" fill="#F3EBDA"/>
+        <g transform="translate(1170 770) scale(9) translate(-93 -146)">
+          <path d="M90 146 C92 124 82 104 60 94 C56 120 66 140 90 146 Z" fill="#8CC084"/>
+          <path d="M96 146 C94 116 106 90 136 74 C142 108 124 136 96 146 Z" fill="#F2A541"/>
+        </g>
+        <path d="M1176 770 C 1170 600, 1240 430, 1420 320" fill="none" stroke="#FBF6EC" stroke-width="4" opacity="0.6"/>
+        <path d="M1140 770 C 1150 660, 1080 560, 960 500" fill="none" stroke="#FBF6EC" stroke-width="4" opacity="0.6"/>
+      </svg>
     </section>
 
     <section id="produtos" style="padding-top:104px;padding-bottom:0;">
