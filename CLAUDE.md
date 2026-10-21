@@ -28,8 +28,10 @@ Símbolo + wordmark e ícones de redes à esquerda; endereço, telefone/WhatsApp
 
 ## Dados da empresa
 
-- Site conceitual (decisão do dono em 2026-10-20: "vale tudo"). Rodapé e bloco Dados da empresa em `sobre.html` mostram a empresa como ela vai ser: Dakoland Indústria e Comércio de Alimentos Ltda, CNPJ 51.927.202/0001-14, Maringá / PR, mesmo antes da alteração contratual da CODECRAFT.
-- Dados fictícios (criados em 2026-10-20 a pedido do dono, site conceitual): endereço "Av. das Indústrias, 2026, Parque Industrial, Maringá / PR, 87065-120", telefone "(44) 3027-2026", WhatsApp "(44) 99702-2026", redes Instagram/Facebook/LinkedIn. Telefone e WhatsApp aparecem só como texto, sem `tel:`/`wa.me`, e as redes apontam para `#`, para não mandar visitantes a números ou perfis de terceiros. Trocar pelos reais quando existirem.
+- Site conceitual (decisão do dono em 2026-10-20: "vale tudo"). Rodapé e bloco Dados da empresa em `sobre.html` mostram a empresa como ela vai ser: Dakoland Indústria e Comércio de Alimentos Ltda, CNPJ 51.927.202/0001-14, mesmo antes da alteração contratual da CODECRAFT.
+- Endereço real desde 2026-10-21 (sede oficial, o mesmo da Codecraft): "Rua João Bettega, 644, Portão, Curitiba / PR, 81070-000", no rodapé das 4 páginas e no bloco Dados da empresa de `sobre.html`. Sem menções a Maringá no site (pedido do dono em 2026-10-21): a empresa é "indústria de alimentos do Paraná".
+- Telefone e WhatsApp reais desde 2026-10-21: "(41) 99907-3688", com `tel:+5541999073688` e `https://wa.me/5541999073688`.
+- Dados fictícios (criados em 2026-10-20 a pedido do dono, site conceitual): redes Instagram/Facebook/LinkedIn, que apontam para `#`, para não mandar visitantes a perfis de terceiros. Trocar pelos reais quando existirem. Nunca voltar aos telefones fictícios "(44) 3027-2026" e "(44) 99702-2026".
 - Nunca usar o CNPJ 22.623.439/0001-03 (fictício), nem `(44) 99000-0000`, `atendimento@punhado.com.br` ou "Rua Exemplo, 100" (valores simulados do canvas do Punhado).
 - Contato: `mailto:contato@dakoland.com.br`
 
