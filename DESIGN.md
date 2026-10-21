@@ -1,6 +1,6 @@
 # Design Reference - Dakoland Foods
 
-Identidade visual derivada do guia de estilos da marca (versão 1.0, outubro de 2026).
+Identidade visual derivada do guia de estilos da marca (versão 1.0, outubro de 2026), em `~/workspace/dakoland/dakoland-stylebook`.
 
 ## Símbolo
 

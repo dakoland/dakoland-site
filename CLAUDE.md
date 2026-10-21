@@ -6,11 +6,13 @@ Guidance for Claude Code when working in this repository.
 
 No build step. Open `index.html` directly or serve with `npx serve .` / `python3 -m http.server 8080`. Tailwind CSS, Fraunces and Inter load via CDN.
 
+Repositório: `git@github.com:dakoland/dakoland-site.git` (organização dakoland), branch `master`, publicado pelo GitHub Pages em https://dakoland.com.br.
+
 ## Architecture
 
 Static site for **Dakoland Foods**, indústria de alimentos (Punhado, The Sauce, Amahoo!). Pages: `index.html` (home), `sobre.html` (Sobre nós), `the-sauce.html` e `amahoo.html` (páginas de marca). Punhado tem site próprio (punhado.com.br) e não ganha página aqui. All assets in `assets/`. See `DESIGN.md` for identity and component patterns.
 
-Base de conhecimento: `~/obsidian/dakoland/dakoland-foods/`. O guia de estilos da marca é a fonte da identidade visual.
+Base de conhecimento: `~/obsidian/dakoland/dakoland-foods/`. O guia de estilos da marca (`~/workspace/dakoland/dakoland-stylebook`) é a fonte da identidade visual.
 
 ## Nav
 
