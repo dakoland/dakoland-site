@@ -41,29 +41,40 @@
     html { scroll-behavior: smooth; }
     .container-inner { max-width: 1120px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
     .foods { font-weight: 600; letter-spacing: 0.52em; color: #9A5518; }
+    :root { --nav-h: 65px; --rodape-h: 0px; }
+    main > section { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - var(--nav-h)); min-height: calc(100svh - var(--nav-h)); scroll-margin-top: var(--nav-h); }
+    main > section > * { width: 100%; }
+    main > section.contato { min-height: calc(100vh - var(--nav-h) - var(--rodape-h)); min-height: calc(100svh - var(--nav-h) - var(--rodape-h)); }
     @media (max-width: 768px) {
       .container-inner { padding-left: 16px; padding-right: 16px; }
-      .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .two-col { grid-template-columns: 1fr !important; }
       .two-col > * { min-width: 0; }
       .three-col { grid-template-columns: 1fr !important; gap: 16px !important; }
       .three-col > * { min-width: 0; }
-      main section { padding-top: 64px !important; padding-bottom: 64px !important; }
+      main section { padding-top: 40px !important; padding-bottom: 40px !important; }
+      .two-col { gap: 24px !important; }
+      main section.hero-marca > .container-inner { flex: 1 0 auto; display: flex; flex-direction: column; }
+      .hero-marca .two-col { display: flex !important; flex-direction: column; flex: 1 0 auto; align-items: stretch !important; }
+      .hero-foto { flex: 1 1 0; min-height: 160px; max-width: none !important; aspect-ratio: auto !important; }
+      .hero-marca .hero-cta { flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; }
+      .hero-marca .hero-cta a { flex: 1; padding-left: 12px !important; padding-right: 12px !important; }
+      main section#produtos { padding-bottom: 0 !important; }
       .hero-cta { flex-direction: column !important; }
       .hero-cta a { width: 100% !important; text-align: center !important; box-sizing: border-box; }
+      main section.contato { padding-top: 32px !important; padding-bottom: 32px !important; }
+      .contato .hero-cta { gap: 10px !important; }
     }
     .hero { position: relative; overflow: hidden; }
     .hero-texto { position: relative; z-index: 1; }
     .hero-arte { position: absolute; right: 0; bottom: 0; height: 100%; width: min(620px, calc(100vw - 720px)); }
     @media (max-width: 768px) {
-      main section.hero { padding-bottom: 0 !important; }
-      .hero-arte { position: static; display: block; width: 78%; height: auto; margin: 40px 0 0 auto; }
+      .hero-arte { width: 92%; height: auto; right: -14%; opacity: 0.2; }
     }
     :root { --marca-h: 520px; --marca-w: 460px; --marca-off: 139px; }
-    .marcas-viewport { overflow: hidden; touch-action: pan-y; cursor: grab; }
+    .marcas-viewport { flex: 1 0 auto; display: flex; overflow: hidden; touch-action: pan-y; cursor: grab; }
     .marcas-viewport.arrastando { cursor: grabbing; }
-    .marcas-trilho { display: flex; height: var(--marca-h); will-change: transform; transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); }
-    .marcas-trilho.sem-animacao { transition: none; }
-    .marca-slide { position: relative; flex: 0 0 calc(var(--marca-w) + var(--marca-off)); margin-right: calc(var(--marca-off) * -1); height: 100%; background-size: cover; background-position: center; clip-path: polygon(var(--marca-off) 0, 100% 0, var(--marca-w) 100%, 0 100%); -webkit-user-drag: none; user-select: none; }
+    .marcas-trilho { display: flex; min-height: var(--marca-h); will-change: transform; }
+    .marca-slide { position: relative; flex: 0 0 calc(var(--marca-w) + var(--marca-off)); margin-right: calc(var(--marca-off) * -1); background-size: cover; background-position: center; clip-path: polygon(var(--marca-off) 0, 100% 0, var(--marca-w) 100%, 0 100%); -webkit-user-drag: none; user-select: none; }
     .marca-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,30,24,0.82) 0%, rgba(15,30,24,0.25) 45%, rgba(15,30,24,0) 70%); }
     .marca-info { position: absolute; z-index: 1; left: calc(var(--marca-off) * 0.25 + 24px); bottom: 44px; display: flex; flex-direction: column; gap: 10px; max-width: calc(var(--marca-w) - 80px); }
     .marca-cat { font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #F2A541; }
@@ -71,11 +82,8 @@
     .marca-link { font-size: 14px; font-weight: 600; color: #FBF6EC; opacity: 0.9; }
     .marca-slide:hover .marca-link { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
     @media (max-width: 768px) {
-      :root { --marca-h: 420px; }
+      :root { --marca-h: 360px; }
       .marca-nome { font-size: 38px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .marcas-trilho { transition: none; }
     }
   </style>
 </head>
@@ -130,20 +138,10 @@
 
     <section id="produtos" class="bg-[#F3EBDA]" style="padding-top:104px;padding-bottom:0;">
       <div class="container-inner">
-        <div class="flex items-end justify-between gap-6 mb-12">
-          <div id="marcas-titulo">
+        <div id="marcas-titulo" class="mb-8 md:mb-12">
             <p class="text-[12px] font-semibold tracking-[0.3em] uppercase mb-5 text-[#9A5518]">Produtos</p>
             <h2 class="font-serif font-bold text-[36px] md:text-[56px] leading-[1.05] text-[#0F4C3A]">Nossas marcas</h2>
           </div>
-          <div class="flex gap-3 shrink-0">
-            <button type="button" id="marcas-anterior" aria-label="Marca anterior" class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-full border border-[#0F4C3A]/30 flex items-center justify-center hover:bg-[#FBF6EC] transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F4C3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5 L8 12 L15 19"/></svg>
-            </button>
-            <button type="button" id="marcas-proxima" aria-label="Próxima marca" class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-full bg-[#0F4C3A] flex items-center justify-center hover:bg-[#0A3328] transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5 L16 12 L9 19"/></svg>
-            </button>
-          </div>
-        </div>
       </div>
       <div class="marcas-viewport" aria-roledescription="carrossel" aria-label="Nossas marcas">
         <div class="marcas-trilho" id="marcas-trilho">
@@ -172,14 +170,14 @@
       </div>
     </section>
 
-    <section id="contato" class="bg-[#0F4C3A]" style="padding-top:112px;padding-bottom:112px;">
+    <section id="contato" class="contato bg-[#0F4C3A]" style="padding-top:112px;padding-bottom:112px;">
       <div class="container-inner text-center flex flex-col items-center">
-        <img src="assets/simbolo-escuro.svg" alt="" class="h-20 w-auto mb-8" width="124" height="144" loading="lazy">
-        <h2 class="font-serif font-bold text-[36px] md:text-[56px] leading-[1.05] text-[#FBF6EC] mb-5">Vamos conversar</h2>
-        <p class="text-[17px] leading-[1.7] text-[#FBF6EC]/80 max-w-[520px] mb-10">Distribuição, revenda, parcerias ou só uma pergunta sobre os produtos. Escreva para a gente.</p>
+        <img src="assets/simbolo-escuro.svg" alt="" class="h-12 md:h-20 w-auto mb-4 md:mb-8" width="124" height="144" loading="lazy">
+        <h2 class="font-serif font-bold text-[32px] md:text-[56px] leading-[1.05] text-[#FBF6EC] mb-3 md:mb-5">Vamos conversar</h2>
+        <p class="text-[15px] md:text-[17px] leading-[1.6] md:leading-[1.7] text-[#FBF6EC]/80 max-w-[520px] mb-6 md:mb-10">Distribuição, revenda, parcerias ou só uma pergunta sobre os produtos. Escreva para a gente.</p>
         <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-          <a href="mailto:contato@dakoland.com.br" class="inline-block text-[15px] bg-[#F2A541] hover:bg-[#E89A2E] text-[#0F4C3A] px-8 py-4 rounded-full font-semibold transition-colors">contato@dakoland.com.br</a>
-          <a href="https://wa.me/5541999073688" target="_blank" rel="noopener" class="inline-block text-[15px] text-[#FBF6EC] px-8 py-4 rounded-full border border-[#FBF6EC]/30 hover:border-[#FBF6EC]/60 font-semibold transition-colors">WhatsApp (41) 99907-3688</a>
+          <a href="mailto:contato@dakoland.com.br" class="inline-block text-[15px] bg-[#F2A541] hover:bg-[#E89A2E] text-[#0F4C3A] px-8 py-3 md:py-4 rounded-full font-semibold transition-colors">contato@dakoland.com.br</a>
+          <a href="https://wa.me/5541999073688" target="_blank" rel="noopener" class="inline-block text-[15px] text-[#FBF6EC] px-8 py-3 md:py-4 rounded-full border border-[#FBF6EC]/30 hover:border-[#FBF6EC]/60 font-semibold transition-colors">WhatsApp (41) 99907-3688</a>
         </div>
       </div>
     </section>
@@ -187,8 +185,8 @@
   </main>
 
   <footer class="border-t border-[#E8DCC4]">
-    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-      <div class="flex flex-col gap-5">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-6 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6">
+      <div class="flex md:flex-col items-center md:items-start justify-between gap-5">
         <div class="flex items-center gap-2.5">
           <img src="assets/simbolo.svg" alt="" class="h-8 w-auto" width="124" height="144">
           <span class="flex flex-col leading-none">
@@ -219,97 +217,85 @@
       var originais = Array.prototype.slice.call(trilho.children);
       var total = originais.length;
       var root = document.documentElement;
+      var semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
       var passo = 460;
-      var indice = total;
-      var travado = false;
+      var velocidade = 40;
+      var deslocamento = 0;
+      var pausado = false;
 
-      originais.forEach(function (slide) { trilho.appendChild(slide.cloneNode(true)); });
+      [0, 1].forEach(function () { originais.forEach(function (slide) { trilho.appendChild(slide.cloneNode(true)); }); });
       originais.slice().reverse().forEach(function (slide) { trilho.insertBefore(slide.cloneNode(true), trilho.firstChild); });
       Array.prototype.forEach.call(trilho.children, function (slide, i) {
         if (i < total || i >= total * 2) { slide.setAttribute('tabindex', '-1'); slide.setAttribute('aria-hidden', 'true'); }
       });
 
       function medir() {
-        var altura = parseFloat(getComputedStyle(root).getPropertyValue('--marca-h'));
+        var altura = trilho.getBoundingClientRect().height;
         passo = Math.min(460, Math.round(window.innerWidth * 0.78));
         root.style.setProperty('--marca-w', passo + 'px');
         root.style.setProperty('--marca-off', Math.round(altura * Math.tan(15 * Math.PI / 180)) + 'px');
       }
 
-      function posicionar(animar, desvio) {
-        trilho.classList.toggle('sem-animacao', !animar);
+      function posicionar() {
+        var ciclo = total * passo;
+        deslocamento = ((deslocamento % ciclo) + ciclo) % ciclo;
         var esquerda = titulo.getBoundingClientRect().left - viewport.getBoundingClientRect().left;
-        trilho.style.transform = 'translateX(' + (esquerda - indice * passo + (desvio || 0)) + 'px)';
+        trilho.style.transform = 'translateX(' + (esquerda - ciclo - deslocamento) + 'px)';
       }
-
-      var semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-      var espera = null;
-
-      function normalizar() {
-        clearTimeout(espera);
-        if (indice >= total * 2) indice -= total;
-        if (indice < total) indice += total;
-        posicionar(false);
-        travado = false;
-      }
-
-      function ir(direcao) {
-        if (travado) return;
-        travado = true;
-        indice += direcao;
-        posicionar(true);
-        if (semMovimento.matches) normalizar(); else espera = setTimeout(normalizar, 700);
-      }
-
-      trilho.addEventListener('transitionend', normalizar);
-
-      document.getElementById('marcas-proxima').addEventListener('click', function () { ir(1); });
-      document.getElementById('marcas-anterior').addEventListener('click', function () { ir(-1); });
 
       var inicioX = null;
-      var desvio = 0;
+      var base = 0;
       var arrastou = false;
       viewport.addEventListener('pointerdown', function (e) {
-        if (travado) return;
-        inicioX = e.clientX; desvio = 0; arrastou = false;
+        inicioX = e.clientX; base = deslocamento; arrastou = false;
         viewport.classList.add('arrastando');
       });
       window.addEventListener('pointermove', function (e) {
         if (inicioX === null) return;
-        desvio = e.clientX - inicioX;
+        var desvio = e.clientX - inicioX;
         if (Math.abs(desvio) > 6) arrastou = true;
-        posicionar(false, desvio);
+        deslocamento = base - desvio;
+        posicionar();
       });
       window.addEventListener('pointerup', function () {
-        if (inicioX === null) return;
         inicioX = null;
         viewport.classList.remove('arrastando');
-        if (desvio < -50) ir(1); else if (desvio > 50) ir(-1); else posicionar(true);
+      });
+      window.addEventListener('pointercancel', function () {
+        inicioX = null;
+        viewport.classList.remove('arrastando');
       });
       trilho.addEventListener('click', function (e) { if (arrastou) { e.preventDefault(); arrastou = false; } }, true);
       trilho.addEventListener('dragstart', function (e) { e.preventDefault(); });
 
-      var automatico = null;
-      function parar() { clearInterval(automatico); automatico = null; }
-      function iniciar() {
-        parar();
-        if (semMovimento.matches || document.hidden) return;
-        automatico = setInterval(function () { ir(1); }, 4500);
-      }
-      viewport.addEventListener('mouseenter', parar);
-      viewport.addEventListener('mouseleave', iniciar);
-      viewport.addEventListener('focusin', parar);
-      viewport.addEventListener('focusout', iniciar);
-      document.getElementById('marcas-proxima').addEventListener('click', iniciar);
-      document.getElementById('marcas-anterior').addEventListener('click', iniciar);
-      window.addEventListener('pointerup', function () { if (!viewport.matches(':hover')) iniciar(); });
-      document.addEventListener('visibilitychange', iniciar);
-      iniciar();
+      viewport.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pausado = true; });
+      viewport.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') pausado = false; });
+      viewport.addEventListener('focusin', function () { pausado = true; });
+      viewport.addEventListener('focusout', function () { pausado = false; });
 
-      window.addEventListener('resize', function () { medir(); posicionar(false); });
+      var anterior = null;
+      function quadro(agora) {
+        if (anterior !== null && !pausado && inicioX === null && !semMovimento.matches) {
+          deslocamento += Math.min(agora - anterior, 64) / 1000 * velocidade;
+          posicionar();
+        }
+        anterior = agora;
+        requestAnimationFrame(quadro);
+      }
+
+      window.addEventListener('resize', function () { medir(); posicionar(); });
       medir();
-      posicionar(false);
+      posicionar();
+      requestAnimationFrame(quadro);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var rodape = document.querySelector('footer');
+      function medir() { document.documentElement.style.setProperty('--rodape-h', rodape.offsetHeight + 'px'); }
+      if (window.ResizeObserver) new ResizeObserver(medir).observe(rodape);
+      medir();
     })();
   </script>
 

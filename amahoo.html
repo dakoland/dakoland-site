@@ -41,15 +41,27 @@
     html { scroll-behavior: smooth; }
     .container-inner { max-width: 1120px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
     .foods { font-weight: 600; letter-spacing: 0.52em; color: #9A5518; }
+    :root { --nav-h: 65px; --rodape-h: 0px; }
+    main > section { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - var(--nav-h)); min-height: calc(100svh - var(--nav-h)); scroll-margin-top: var(--nav-h); }
+    main > section > * { width: 100%; }
+    main > section.contato { min-height: calc(100vh - var(--nav-h) - var(--rodape-h)); min-height: calc(100svh - var(--nav-h) - var(--rodape-h)); }
     @media (max-width: 768px) {
       .container-inner { padding-left: 16px; padding-right: 16px; }
-      .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .two-col { grid-template-columns: 1fr !important; }
       .two-col > * { min-width: 0; }
       .three-col { grid-template-columns: 1fr !important; gap: 16px !important; }
       .three-col > * { min-width: 0; }
-      main section { padding-top: 64px !important; padding-bottom: 64px !important; }
+      main section { padding-top: 40px !important; padding-bottom: 40px !important; }
+      .two-col { gap: 24px !important; }
+      main section.hero-marca > .container-inner { flex: 1 0 auto; display: flex; flex-direction: column; }
+      .hero-marca .two-col { display: flex !important; flex-direction: column; flex: 1 0 auto; align-items: stretch !important; }
+      .hero-foto { flex: 1 1 0; min-height: 160px; max-width: none !important; aspect-ratio: auto !important; }
+      .hero-marca .hero-cta { flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; }
+      .hero-marca .hero-cta a { flex: 1; padding-left: 12px !important; padding-right: 12px !important; }
       .hero-cta { flex-direction: column !important; }
       .hero-cta a { width: 100% !important; text-align: center !important; box-sizing: border-box; }
+      main section.contato { padding-top: 32px !important; padding-bottom: 32px !important; }
+      .contato .hero-cta { gap: 10px !important; }
     }
   </style>
 </head>
@@ -75,20 +87,20 @@
 
   <main>
 
-    <section style="padding-top:88px;padding-bottom:104px;">
+    <section class="hero-marca" style="padding-top:88px;padding-bottom:104px;">
       <div class="container-inner">
         <div class="two-col" style="display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:center;">
           <div>
-            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-6">Suco de milho</p>
-            <h1 class="font-serif font-bold text-[56px] md:text-[88px] leading-[1] tracking-[-0.01em] text-[#0F4C3A] mb-4">Amahoo!</h1>
-            <p class="font-serif font-bold text-[24px] md:text-[30px] leading-[1.2] text-[#9A5518] mb-7">O milho em forma de bebida</p>
-            <p class="text-[17px] md:text-[19px] leading-[1.65] text-[#5A5148] mb-10 max-w-[520px]">Suco de milho para tomar gelado, a qualquer hora do dia. Amahoo! leva o sabor do milho direto para o copo.</p>
+            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-3 md:mb-6">Suco de milho</p>
+            <h1 class="font-serif font-bold text-[44px] md:text-[88px] leading-[1] tracking-[-0.01em] text-[#0F4C3A] mb-3 md:mb-4">Amahoo!</h1>
+            <p class="font-serif font-bold text-[22px] md:text-[30px] leading-[1.2] text-[#9A5518] mb-4 md:mb-7">O milho em forma de bebida</p>
+            <p class="text-[16px] md:text-[19px] leading-[1.6] md:leading-[1.65] text-[#5A5148] mb-6 md:mb-10 max-w-[520px]">Suco de milho para tomar gelado, a qualquer hora do dia. Amahoo! leva o sabor do milho direto para o copo.</p>
             <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;">
               <a href="mailto:contato@dakoland.com.br?subject=Amahoo!%20-%20Revenda" class="inline-block text-[15px] text-[#FBF6EC] bg-[#0F4C3A] hover:bg-[#0A3328] px-7 py-3.5 rounded-full font-semibold transition-colors">Quero revender</a>
               <a href="index.html#produtos" class="inline-block text-[15px] text-[#0F4C3A] px-7 py-3.5 rounded-full border border-[#0F4C3A]/30 hover:bg-[#F3EBDA] transition-colors font-semibold">Todas as marcas</a>
             </div>
           </div>
-          <img src="assets/amahoo-destaque.jpg" alt="Caixa do suco de milho Amahoo! em meio a espigas e grãos de milho" class="w-full max-w-[460px] justify-self-center aspect-[4/5] object-cover rounded-[28px]" width="832" height="1040">
+          <img src="assets/amahoo-destaque.jpg" alt="Caixa do suco de milho Amahoo! em meio a espigas e grãos de milho" class="hero-foto w-full max-w-[460px] justify-self-center aspect-[4/5] object-cover rounded-[28px]" width="832" height="1040">
         </div>
       </div>
     </section>
@@ -97,26 +109,26 @@
       <div class="container-inner">
         <div class="two-col" style="display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start;">
           <div>
-            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-5">O suco</p>
-            <h2 class="font-serif font-bold text-[36px] md:text-[52px] leading-[1.05] text-[#0F4C3A] mb-5">Leve, nutritivo e sustentável</h2>
-            <p class="text-[17px] leading-[1.7] text-[#5A5148]">Amahoo! é a marca de milho da Dakoland Foods. O suco é feito para o dia a dia, de um ingrediente que alimenta o país inteiro.</p>
+            <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-3 md:mb-5">O suco</p>
+            <h2 class="font-serif font-bold text-[30px] md:text-[52px] leading-[1.05] text-[#0F4C3A] mb-2 md:mb-5">Leve, nutritivo e sustentável</h2>
+            <p class="text-[15px] md:text-[17px] leading-[1.6] md:leading-[1.7] text-[#5A5148]">Amahoo! é a marca de milho da Dakoland Foods. O suco é feito para o dia a dia, de um ingrediente que alimenta o país inteiro.</p>
           </div>
           <div class="flex flex-col">
-            <div class="py-6 border-t border-[#0F4C3A]/15">
-              <h3 class="font-serif font-bold text-[26px] text-[#0F4C3A] mb-2">Rico em vitaminas</h3>
-              <p class="text-[16px] leading-[1.65] text-[#5A5148]">Todo o valor do milho, agora em um copo.</p>
+            <div class="py-2 md:py-6 border-t border-[#0F4C3A]/15">
+              <h3 class="font-serif font-bold text-[20px] md:text-[26px] text-[#0F4C3A] mb-1 md:mb-2">Rico em vitaminas</h3>
+              <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Todo o valor do milho, agora em um copo.</p>
             </div>
-            <div class="py-6 border-t border-[#0F4C3A]/15">
-              <h3 class="font-serif font-bold text-[26px] text-[#0F4C3A] mb-2">Baixo teor calórico</h3>
-              <p class="text-[16px] leading-[1.65] text-[#5A5148]">Para tomar todo dia, sem pesar.</p>
+            <div class="py-2 md:py-6 border-t border-[#0F4C3A]/15">
+              <h3 class="font-serif font-bold text-[20px] md:text-[26px] text-[#0F4C3A] mb-1 md:mb-2">Baixo teor calórico</h3>
+              <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Para tomar todo dia, sem pesar.</p>
             </div>
-            <div class="py-6 border-t border-[#0F4C3A]/15">
-              <h3 class="font-serif font-bold text-[26px] text-[#0F4C3A] mb-2">Com leite ou com água</h3>
-              <p class="text-[16px] leading-[1.65] text-[#5A5148]">Duas versões. A feita com água não tem lactose.</p>
+            <div class="py-2 md:py-6 border-t border-[#0F4C3A]/15">
+              <h3 class="font-serif font-bold text-[20px] md:text-[26px] text-[#0F4C3A] mb-1 md:mb-2">Com leite ou com água</h3>
+              <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Duas versões. A feita com água não tem lactose.</p>
             </div>
-            <div class="py-6 border-y border-[#0F4C3A]/15">
-              <h3 class="font-serif font-bold text-[26px] text-[#0F4C3A] mb-2">Do tamanho certo</h3>
-              <p class="text-[16px] leading-[1.65] text-[#5A5148]">Garrafinha, lata e o tamanho merenda, com menos açúcar, para as crianças.</p>
+            <div class="py-2 md:py-6 border-y border-[#0F4C3A]/15">
+              <h3 class="font-serif font-bold text-[20px] md:text-[26px] text-[#0F4C3A] mb-1 md:mb-2">Do tamanho certo</h3>
+              <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Garrafinha, lata e o tamanho merenda, com menos açúcar, para as crianças.</p>
             </div>
           </div>
         </div>
@@ -125,22 +137,22 @@
 
     <section style="padding-top:104px;padding-bottom:104px;">
       <div class="container-inner">
-        <div class="max-w-[640px] mb-14">
+        <div class="max-w-[640px] mb-8 md:mb-14">
           <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-5">Como tomar</p>
-          <h2 class="font-serif font-bold text-[36px] md:text-[52px] leading-[1.05] text-[#0F4C3A]">Do jeito que você gostar</h2>
+          <h2 class="font-serif font-bold text-[30px] md:text-[52px] leading-[1.05] text-[#0F4C3A]">Do jeito que você gostar</h2>
         </div>
         <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;">
-          <div class="border-t-2 border-[#0F4C3A] pt-6">
-            <h3 class="font-serif font-bold text-[30px] text-[#0F4C3A] mb-3">Bem gelado</h3>
-            <p class="text-[16px] leading-[1.65] text-[#5A5148]">Direto da geladeira, puro, para refrescar.</p>
+          <div class="border-t-2 border-[#0F4C3A] pt-3 md:pt-6">
+            <h3 class="font-serif font-bold text-[22px] md:text-[30px] text-[#0F4C3A] mb-1 md:mb-3">Bem gelado</h3>
+            <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Direto da geladeira, puro, para refrescar.</p>
           </div>
-          <div class="border-t-2 border-[#F2A541] pt-6">
-            <h3 class="font-serif font-bold text-[30px] text-[#0F4C3A] mb-3">No café da manhã</h3>
-            <p class="text-[16px] leading-[1.65] text-[#5A5148]">Ao lado do pão, da fruta e do café.</p>
+          <div class="border-t-2 border-[#F2A541] pt-3 md:pt-6">
+            <h3 class="font-serif font-bold text-[22px] md:text-[30px] text-[#0F4C3A] mb-1 md:mb-3">No café da manhã</h3>
+            <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Ao lado do pão, da fruta e do café.</p>
           </div>
-          <div class="border-t-2 border-[#8CC084] pt-6">
-            <h3 class="font-serif font-bold text-[30px] text-[#0F4C3A] mb-3">No lanche</h3>
-            <p class="text-[16px] leading-[1.65] text-[#5A5148]">Para a pausa da tarde, em casa, na escola ou no trabalho.</p>
+          <div class="border-t-2 border-[#8CC084] pt-3 md:pt-6">
+            <h3 class="font-serif font-bold text-[22px] md:text-[30px] text-[#0F4C3A] mb-1 md:mb-3">No lanche</h3>
+            <p class="text-[15px] md:text-[16px] leading-[1.55] md:leading-[1.65] text-[#5A5148]">Para a pausa da tarde, em casa, na escola ou no trabalho.</p>
           </div>
         </div>
       </div>
@@ -151,14 +163,14 @@
         <div class="two-col" style="display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start;">
           <div>
             <p class="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#9A5518] mb-5">Da mesma casa</p>
-            <h2 class="font-serif font-bold text-[36px] md:text-[52px] leading-[1.05] text-[#0F4C3A]">Outras marcas Dakoland</h2>
+            <h2 class="font-serif font-bold text-[30px] md:text-[52px] leading-[1.05] text-[#0F4C3A]">Outras marcas Dakoland</h2>
           </div>
           <div class="flex flex-col">
-            <a href="https://punhado.com.br" target="_blank" rel="noopener" class="flex items-baseline justify-between gap-6 py-6 border-t border-[#0F4C3A]/15 hover:opacity-60 transition-opacity">
+            <a href="https://punhado.com.br" target="_blank" rel="noopener" class="flex items-baseline justify-between gap-6 py-4 md:py-6 border-t border-[#0F4C3A]/15 hover:opacity-60 transition-opacity">
               <span class="font-serif font-bold text-[30px] text-[#0F4C3A]">Punhado</span>
               <span class="text-[14px] text-[#5A5148] text-right">Granola · punhado.com.br →</span>
             </a>
-            <a href="the-sauce.html" class="flex items-baseline justify-between gap-6 py-6 border-y border-[#0F4C3A]/15 hover:opacity-60 transition-opacity">
+            <a href="the-sauce.html" class="flex items-baseline justify-between gap-6 py-4 md:py-6 border-y border-[#0F4C3A]/15 hover:opacity-60 transition-opacity">
               <span class="font-serif font-bold text-[30px] text-[#0F4C3A]">The Sauce</span>
               <span class="text-[14px] text-[#5A5148] text-right">Molho para tacos →</span>
             </a>
@@ -167,14 +179,14 @@
       </div>
     </section>
 
-    <section id="contato" class="bg-[#0F4C3A]" style="padding-top:112px;padding-bottom:112px;">
+    <section id="contato" class="contato bg-[#0F4C3A]" style="padding-top:112px;padding-bottom:112px;">
       <div class="container-inner text-center flex flex-col items-center">
-        <img src="assets/simbolo-escuro.svg" alt="" class="h-20 w-auto mb-8" width="124" height="144" loading="lazy">
-        <h2 class="font-serif font-bold text-[36px] md:text-[56px] leading-[1.05] text-[#FBF6EC] mb-5">Vamos conversar</h2>
-        <p class="text-[17px] leading-[1.7] text-[#FBF6EC]/80 max-w-[520px] mb-10">Distribuição, revenda, parcerias ou só uma pergunta sobre os produtos. Escreva para a gente.</p>
+        <img src="assets/simbolo-escuro.svg" alt="" class="h-12 md:h-20 w-auto mb-4 md:mb-8" width="124" height="144" loading="lazy">
+        <h2 class="font-serif font-bold text-[32px] md:text-[56px] leading-[1.05] text-[#FBF6EC] mb-3 md:mb-5">Vamos conversar</h2>
+        <p class="text-[15px] md:text-[17px] leading-[1.6] md:leading-[1.7] text-[#FBF6EC]/80 max-w-[520px] mb-6 md:mb-10">Distribuição, revenda, parcerias ou só uma pergunta sobre os produtos. Escreva para a gente.</p>
         <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-          <a href="mailto:contato@dakoland.com.br" class="inline-block text-[15px] bg-[#F2A541] hover:bg-[#E89A2E] text-[#0F4C3A] px-8 py-4 rounded-full font-semibold transition-colors">contato@dakoland.com.br</a>
-          <a href="https://wa.me/5541999073688" target="_blank" rel="noopener" class="inline-block text-[15px] text-[#FBF6EC] px-8 py-4 rounded-full border border-[#FBF6EC]/30 hover:border-[#FBF6EC]/60 font-semibold transition-colors">WhatsApp (41) 99907-3688</a>
+          <a href="mailto:contato@dakoland.com.br" class="inline-block text-[15px] bg-[#F2A541] hover:bg-[#E89A2E] text-[#0F4C3A] px-8 py-3 md:py-4 rounded-full font-semibold transition-colors">contato@dakoland.com.br</a>
+          <a href="https://wa.me/5541999073688" target="_blank" rel="noopener" class="inline-block text-[15px] text-[#FBF6EC] px-8 py-3 md:py-4 rounded-full border border-[#FBF6EC]/30 hover:border-[#FBF6EC]/60 font-semibold transition-colors">WhatsApp (41) 99907-3688</a>
         </div>
       </div>
     </section>
@@ -182,8 +194,8 @@
   </main>
 
   <footer class="border-t border-[#E8DCC4]">
-    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-10 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-      <div class="flex flex-col gap-5">
+    <div class="max-w-[1120px] mx-auto px-4 md:px-8 py-6 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6">
+      <div class="flex md:flex-col items-center md:items-start justify-between gap-5">
         <div class="flex items-center gap-2.5">
           <img src="assets/simbolo.svg" alt="" class="h-8 w-auto" width="124" height="144">
           <span class="flex flex-col leading-none">
@@ -205,6 +217,15 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var rodape = document.querySelector('footer');
+      function medir() { document.documentElement.style.setProperty('--rodape-h', rodape.offsetHeight + 'px'); }
+      if (window.ResizeObserver) new ResizeObserver(medir).observe(rodape);
+      medir();
+    })();
+  </script>
 
 </body>
 </html>
